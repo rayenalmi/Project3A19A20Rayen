@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Symfony!</title>
+    </head>
+    <body>
+    <h3> l’affichage de la liste des formations. </h3>
+        {% for fa in formations %}
+            {% for f in fa %}
+                 <li> {{f}}  </li>
+            {% endfor %}
+            <br>
+        {% endfor %}
+       
+<br><br>
+ <h3>les titres des formations en majuscule </h3>
+{% for f in formations %}
+                 <li> {{f.Titre|upper}}  </li>
+            <br>
+        {% endfor %}
+<br><br>
+ <h3>le nombre des formations. </h3>
+ <p> {{formations|length}}  </p>
+<br><br>
+ <h3>les titres des formations théoriques. </h3>
+{% for f in formations %}
+            {% if f.Description == "formation theorique" %}
+                 <li> {{f.Titre}} </li>
+            {% endif %}
+            <br>
+        {% endfor %}
+<br><br>
+ <h3>le nombre total de participants dans toutes les formations. </h3>
+{% set x = 0 %}
+{% for f in formations %}
+        {% set x = x + f.nb_participants %}
+        {% endfor %}
+<h1> {{x}} </h1>
+
+<br><br>
+ <h3>une condition dans le cas où le tableau n’est pas défini et/ou vide. </h3>
+ {% if formations is null %}
+ <p> yes </p>
+{% else %}
+ <p> no </p>
+ {% endif %}
+
+ <br><br>
+ <h3>un bouton, participer, devant la formation ayant aucun participant. </h3>
+ {% for f in formations %}
+        {% if f.nb_participants == 0  %}
+        <p> {{f.Titre}}   |  <bouton><a href="{{ path('club', {name: f.Titre}) }}">Participer</a>  </bouton>   </p>
+        {% endif %}
+
+{% endfor %}
+    </body>
+</html>

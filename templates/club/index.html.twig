@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClubController!{% endblock %}
+
+{% block body %}
+<style>
+.p1 {
+  padding-top: 5px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  padding-left: 80px;
+}
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .img {
+  display: block;
+  margin: 0 auto;
+}
+.element-to-center {
+	text-align: center; 
+}
+</style>
+<h3 class = "element-to-center"> Clubs Esprit </h3> 
+<p class="p1"> au sein d'Esprit , les association et clubs  , les association et clubs remplissent plusieurs roles etant donné la diversvte des motivation qui animent ceux qui en sont au sein d'Esprit , les association et clubs remplissent plusieurs roles etant donné la diversvte des motivation qui animent ceux qui en sont au sein d'Esprit , les association et clubs remplissent plusieurs roles etant donné la diversvte des motivation qui animent ceux qui en sont </p>
+<img class="img" src={{asset('media/clubEsprt.png')}} width="55%">
+
+{% endblock %}

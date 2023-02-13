@@ -1,3 +1,6 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+club:
+    path:       /club/get/{name}
+    controller: App\Controller\ClubController::index
